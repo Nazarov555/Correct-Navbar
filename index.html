@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Correct navbar, correct navbar">
+    <link rel="stylesheet" href="style.css">
+    <title>Correct Navbar</title>
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="#">Logo</a></div>
+            <ul class="nav-links">
+                <li><a href="home">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="contacts">Contacts</a></li>
+            </ul>
+            <a href="#" class="action_button">Get Started</a>
+            <div class="menu_button">
+                <img src="./img/menu-white.svg" alt="menu button" title="menu button">
+            </div>
+        </nav>
+
+        <div class="smallscreen_menu open">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="contacts">Contacts</a></li>
+                <li><a href="#" class="action_button">Get Started</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section id="hero">
+            <h1>Добро пожаловать</h1>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur <br> adipisicing elit. Qui nemo minima laborum iste.
+            </p>
+        </section>
+    </main>
+
+    <script>
+        const menuBtn = document.querySelector(".menu_button");
+        const menuBtnImage = document.querySelector(".menu_button img");
+        const smallScreenMenu = document.querySelector(".smallscreen_menu");
+
+        menuBtn.addEventListener('click', ()=> {
+            smallScreenMenu.classList.toggle('open');
+
+            const isOpen = smallScreenMenu.classList.contains('open');
+
+            menuBtnImage.src = isOpen ? './img/close-white.svg' : './img/menu-white.svg';
+        });
+    </script>
+</body>
+</html>
